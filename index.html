@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadora de Negocios Rentables 2026</title>
+    <meta name="description" content="Calculadora que te recomienda el mejor negocio según tu presupuesto, tiempo y habilidades." />
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif; margin: 0; padding: 0; }
+      .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+      .card { border: 1px solid #e5e7eb; border-radius: 16px; padding: 16px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); background:#fff; }
+      .grid { display: grid; gap: 16px; }
+      @media (min-width: 768px) { .grid-2 { grid-template-columns: 1fr 1fr; } .grid-3 { grid-template-columns: 1fr 1fr 1fr; } }
+      .bar { height: 8px; background:#e5e7eb; border-radius:999px; overflow:hidden; }
+      .bar > div { height: 8px; background:#111827; }
+      .pill { border:1px solid #e5e7eb; border-radius:12px; padding:8px 10px; display:inline-flex; align-items:center; gap:8px; cursor:pointer; }
+      .pill.active { background:#111827; color:#fff; }
+      details { background:#f9fafb; }
+      summary { cursor:pointer; }
+      .muted { opacity:.7; }
+      input[type="range"] { width: 100%; }
+      select { width:100%; padding:8px; border:1px solid #e5e7eb; border-radius:12px; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    </style>
+  </head>
+  <body>
+    <div id="business-calculator-root"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
