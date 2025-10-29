@@ -118,18 +118,29 @@ function BusinessCalculator(){
             )
           ),
         ),
-        React.createElement("div", { className:"card" },
-          React.createElement("h2", null, "Tus habilidades (marca tus fuertes)"),
-          React.createElement("div", { style:{display:"grid", gridTemplateColumns:"repeat(3, minmax(0,1fr))", gap:"12px"} },
-            Object.entries(SKILL_LABELS).map(([key,label]) =>
-              React.createElement("label", { key, className:`pill ${skills.includes(key) ? "active" : ""}`, onClick:()=> toggleSkill(key) },
-                React.createElement("input", { type:"checkbox", style:{display:"none"}, checked:skills.includes(key), readOnly:true }),
-                React.createElement("span", {style:{fontSize:"13px"}}, label)
-              )
-            )
-          ),
-          React.createElement("p", {className:"muted", style:{fontSize:"12px"}}, "Consejo: marca 3–5 fortalezas para un resultado más fino.")
-        )
+React.createElement("div", { className:"card" },
+  React.createElement("h2", null, "Tus habilidades (marca tus fuertes)"),
+  React.createElement("div", { style:{display:"grid", gridTemplateColumns:"repeat(3,minmax(0,1fr))", gap:"12px"} },
+    Object.entries(SKILL_LABELS).map(([key,label]) => {
+      const active = skills.includes(key);
+      return React.createElement("button", {
+        key,
+        onClick:()=> toggleSkill(key),
+        style:{
+          border:"1px solid #e5e7eb",
+          borderRadius:"12px",
+          padding:"8px 10px",
+          background:active?"#111827":"#fff",
+          color:active?"#fff":"#000",
+          cursor:"pointer",
+          fontSize:"13px",
+          transition:"all 0.2s"
+        }
+      }, label);
+    })
+  ),
+  React.createElement("p", {className:"muted", style:{fontSize:"12px"}}, "Consejo: marca 3–5 fortalezas para un resultado más fino.")
+)
       ),
       React.createElement("section", null,
         React.createElement("h2", null, "Top 3 ideas para ti"),
